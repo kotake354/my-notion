@@ -45,7 +45,7 @@ export function NoteList({ layer = 0, parentId }: NoteListProps) {
     e.stopPropagation();
     await noteRepository.delete(noteId);
     noteStore.delete(noteId);
-    navigate
+    navigate('/');
   };
 
   const moveToDetail = (noteId: number) => {
@@ -71,10 +71,10 @@ export function NoteList({ layer = 0, parentId }: NoteListProps) {
             <NoteItem note={note}
              layer={layer}
              isSelected={id == note.id}
-             expanded={expanded.get(note.id)} 
+             expanded={expanded.get(note.id)}
              onClick={() => moveToDetail(note.id)}
              onExpand={(e: React.MouseEvent) => fetchChildren(e, note)}
-             onCreate={(e) => createChild(e, note.id)} 
+             onCreate={(e) => createChild(e, note.id)}
              onDelete={(e) => deleteNote(e, note.id)}
              />
              {expanded.get(note.id) && (

@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/superbase";
+import { supabase } from "@/lib/supabase";
 
 export const authRepository = {
     async signup (name: string, email: string, password: string) {
@@ -8,7 +8,7 @@ export const authRepository = {
             options:{ data: { name }},
         });
         if(error != null || data.user == null) throw new Error(error?.message);
-        data.user.user_metadata.name
+
         return{
             ...data.user,
             userName: data.user.user_metadata.name

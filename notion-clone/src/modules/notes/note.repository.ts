@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/superbase";
+import { supabase } from "@/lib/supabase";
 
 export const noteRepository = {
     async create (userId: string, params: { title?: string; parentId?: number }){

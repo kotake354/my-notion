@@ -15,7 +15,7 @@ const NoteDetail = () => {
   const note = noteStore.getOne(id);
 
   useEffect(() => {
-    fetchOne()
+    fetchOne();
   }, [id]);
 
   const fetchOne = async () => {
@@ -44,8 +44,8 @@ const NoteDetail = () => {
     <div className="pb-40 pt-20">
       <div className="md:max-w-3xl lg:md-max-w-4xl mx-auto">
         <TitleInput initialData={note} onTitleChange={(title) => updateNote(id, { title }) } />
-          <Editor 
-          initialContent={note.content}          
+          <Editor
+          initialContent={note.content}
           onChange={(content) => updateNote(id, { content})} />
       </div>
     </div>
